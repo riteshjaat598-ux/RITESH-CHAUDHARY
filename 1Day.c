@@ -1,14 +1,20 @@
 #include<stdio.h>
 int main(){
     int a;
-
     printf("A:");
     scanf("%d",&a);
-     int b;
-     printf("B:");
-     scanf("%d", &b);
-     int c= a+b ;
-     printf("added value is: %d",c);
-    return 0;
+    printf("the value of A is:%d\n",a);
+int b;
+printf("B:");
+scanf("%d",&b);
+printf("the value of B is:%d\n",b);
+printf("THE ADDED VALUE IS:%d\n",a+b);
+printf("THE SUBTRACTED VALUE IS:%d\n",a-b);
+printf("THE MULTIPLIED VALUE IS:%d\n",a*b);
+printf("THE DIVIDED VALUE IS:%d\n",a/b);
+return 0;
 
 }
+
+
+    
