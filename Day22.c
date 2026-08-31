@@ -1,41 +1,35 @@
 #include <stdio.h>
 
-long long getFactorial(int digit) {
-    long long fact = 1;
-    for (int i = 1; i <= digit; i++) {
-        fact *= i;
-    }
-    return fact;
-}
-
 int main() {
-    int num, originalNum, lastDigit;
-    long long sum = 0;
+    int n;
+    double sum = 0.0;
 
-    printf("Enter an integer: ");
-    if (scanf("%d", &num) != 1) {
-        printf("Invalid input.\n");
+    printf("Enter the number of terms (n): ");
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Please enter a valid positive integer.\n");
         return 1;
     }
-
-    originalNum = num;
-
-    if (num < 0) {
-        printf("%d is not a strong number.\n", originalNum);
-        return 0;
+    
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            sum += 1.0; 
+        } else {
+            double numerator = 2.0 * i - 1.0;
+            double denominator = 2.0 * i;
+            sum += numerator / denominator;
+        }
     }
 
-    while (num > 0) {
-        lastDigit = num % 10;         
-        sum += getFactorial(lastDigit); 
-        num = num / 10;                
-    }
-
-    if (sum == originalNum) {
-        printf("%d is a Strong Number.\n", originalNum);
-    } else {
-        printf("%d is NOT a Strong Number.\n", originalNum);
-    }
+    printf("The sum of the series up to %d terms is: %.6lf\n", n, sum);
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
